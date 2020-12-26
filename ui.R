@@ -28,7 +28,11 @@ shinyUI(fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-            plotOutput("plot1", brush = brushOpts(id="brush1"))
+            tabsetPanel(type = "tabs",
+                        tabPanel("Plot",br(),plotOutput("plot1", brush = brushOpts(id="brush1"))),
+                        tabPanel("Documentation",br(),("When entering the values of x and y and hitting the apply changes button, a graph of the relationship between the two data that was entered is created, and it is also possible to select a set of points greater than 2 within the graph to get the slope and intercept of the selected data"))
+                        )
+            
         )
     )
 ))
