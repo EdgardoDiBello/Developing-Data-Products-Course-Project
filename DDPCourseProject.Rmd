@@ -1,0 +1,55 @@
+---
+title: "Developing Data Products Course Project"
+author: "Edgardo Di Bello"
+date: "12/26/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+***
+### **Introduction**
+
+This project consists of two parts
+
+1. A Shiny application that has widget input, ui input in server.R, reactive output using server calculations, and supporting documentation.
+
+2. A Reproducible Pitch Presentation that contains five slides in either Slidify or Rstudio Presenter that is pushed to and hosted on GitHub or Rpubs and contains embedded R code that runs.
+
+### **Links**
+
+1. Shiny App : [Link](https://edgardodibello.shinyapps.io/DevelopingDateProductsCourseProject/)
+
+2. `server.R` and `ui.R` files: [Link](https://github.com/EdgardoDiBello/Developing-Data-Products-Course-Project)
+
+
+## The App
+
+My app is very simple, it consists of the analysis of the data `trees`, when entering the values of x and y and hitting the apply changes button, a graph of the relationship between the two data that was entered is created, and it is also possible to select a set of points greater than 2 within the graph to get the slope and intercept of the selected data.
+
+## Example
+
+graph of data trees relating girth against volume
+```{r eval = FALSE}
+data("trees")
+plot(trees$Girth, trees$Volume, xlab = "Girth",
+     ylab = "Volume", main = "Comparision between Girth vs Volume",
+     cex = 1, pch = 19, col= "aquamarine")
+        
+  abline(lm(Volume ~ Girth, trees),col="darkviolet",lwd=2)
+  
+```
+
+## Example
+
+```{r echo = FALSE}
+data("trees")
+plot(trees$Girth, trees$Volume, xlab = "Girth",
+     ylab = "Volume", main = "Comparision between Girth vs Volume",
+     cex = 1, pch = 19, col= "aquamarine")
+        
+  abline(lm(Volume ~ Girth, trees),col="darkviolet",lwd=2)
+  
+```
